@@ -76,12 +76,12 @@ export default async function ProjectArticle({
       />
 
       <div className="flex flex-wrap mt-4" style={{ maxHeight: "150px", overflowY: "auto" }}>
-        {Object.keys(data).map((key, index) => {
-          if (key.includes("photo") && data[key]) {
+      {Object.entries(data).map(([key, value], index) => {
+          if (key.includes("photo") && value) {
             return (
               <div key={index} className="flex-none mr-1 mb-4">
                 <Image
-                  src={urlFor(data[key]).url()}
+                  src={urlFor(value).url()}
                   width={200}
                   height={200}
                   alt="Photo"
@@ -102,12 +102,12 @@ export default async function ProjectArticle({
               <div>
                 <h3 className="mt-2 ">Technologies Used:</h3>
                 <div className="flex flex-wrap mb--2 ">                
-                  {Object.keys(data).map((key, index) => {
-                    if (key.includes("tecsImage") && data[key]) {
+                {Object.entries(data).map(([key, value], index) => {
+                    if (key.includes("tecsImage") && value) {
                       return (
-                        <div key={index} className="w-1/8 md:w-1/8 lg:w-1/10 p-1">                        
+                        <div key={index} className="w-1/8 md:w-1/8 lg:w-1/10 p-1">
                           <Image
-                            src={urlFor(data[key]).url()}
+                            src={urlFor(value).url()}
                             alt="technology image"
                             width={40}
                             height={40}

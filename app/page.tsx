@@ -90,22 +90,22 @@ export default async function Home() {
                   <CardContent>
                   <h3 className="mt-2 text-xs">Technologies Used:</h3>
                 <div className="flex flex-wrap mb--2 ">                
-                  {Object.keys(post).map((key) => {
-                    if (key.includes("tecsImage") && post[key]) {
-                      return (
-                        <div key={key} className=" p-1">                        
-                          <Image
-                            src={urlFor(post[key]).url()}
-                            alt="technology image"
-                            width={30}
-                            height={30}
-                            className="object-cover rounded-lg"
-                          />
-                        </div>
-                      );
-                    }
-                    return null;
-                  })}
+                {Object.entries(post).map(([key, value]) => {
+                        if (key.includes("tecsImage") && value) {
+                          return (
+                            <div key={key} className=" p-1">                        
+                              <Image
+                                src={urlFor(value).url()}
+                                alt="technology image"
+                                width={30}
+                                height={30}
+                                className="object-cover rounded-lg"
+                              />
+                            </div>
+                          );
+                        }
+                        return null;
+                      })}
                   </div>
                   <div className="flex justify-between mt-2">
                     <Link href={post.githubUrl} target="_blank" className="underline text-xs italic hover:scale-110">

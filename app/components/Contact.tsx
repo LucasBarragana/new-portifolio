@@ -35,7 +35,7 @@ export default function Contact() {
         <section id="contact" className="mt-10 max-w-5xl mx-auto p-4">
             <h1 className="text-4xl mb-5 font-semibold">Contact</h1>
             <blockquote className="italic mb-5">
-                &quot;People around you influence you personally. Just as the places you work influence you professionally.
+            &quot;People around you influence you personally. Just as the places you work influence you professionally.
                 Great people, great projects, great work.&quot;
             </blockquote>
             <Card>
@@ -43,7 +43,7 @@ export default function Contact() {
                     <form ref={form} onSubmit={sendEmail}>
                         <div className="flex flex-col justify-center items-center p-10 rounded-lg">
                             <div>
-                                <h2 className="text-xl mb-3 font-semibold">Send me a message and let's work together</h2>
+                                <h2 className="text-xl mb-3 font-semibold">Send me a message and let&quot;s work together</h2>
                             </div>
                             <div className="flex mb-3">
                                 <div className="flex flex-col mr-5" style={{ width: '40%' }}>
