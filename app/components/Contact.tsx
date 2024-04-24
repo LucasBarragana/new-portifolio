@@ -43,7 +43,7 @@ export default function Contact() {
                     <form ref={form} onSubmit={sendEmail}>
                         <div className="flex flex-col justify-center items-center p-10 rounded-lg">
                             <div>
-                                <h2 className="text-xl mb-3 font-semibold">Send me a message and letlet&apos;ss work together</h2>
+                                <h2 className="text-xl mb-3 font-semibold">Send me a message and let s work together</h2>
                             </div>
                             <div className="flex mb-3">
                                 <div className="flex flex-col mr-5" style={{ width: '40%' }}>
