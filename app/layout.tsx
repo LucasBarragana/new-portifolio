@@ -26,7 +26,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="max-w-3xl mx-auto px-4">
+          <main className="max-w-4xl mx-auto px-4">
             {children}
             <footer className="border-t p-8 text-center text-gray-500 mt-16">
                 &copy; 2024 All rights reserved - Dev. Lucas Oliveira Barragana

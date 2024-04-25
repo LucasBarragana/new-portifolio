@@ -47,21 +47,22 @@ const About = () => {
       </div>
 
       {showContent && (
-        <div className=" p-10 -mt-8  rounded-lg">
+        <div className=" p-10 -mt-8  rounded-lg z-20">
+          <Image src={"/futebol-tecnologia.jpg"} alt='fundoSkills' className='absolute z-5 opacity-5' width={1000} height={1000}/>
           <h1 className="text-4xl font-semibold  mb-5">Extras</h1>
-          <div className={`grid grid-cols-1 gap-4`}>
-            <div className=" rounded-lg px-10 py-5" >
+          <div className={`grid grid-cols-1 gap-4 z-20`}>
+            <div className=" rounded-lg px-10 py-5 z-20" >
               <h3 className=" font-semibold mb-2 text-orange-500">About me</h3>
               <p className="font-semibold ">Passionate about technology. Constantly studying, learning new technologies, and improving in the ones that I identify myself the most.</p>
             </div>
 
-            <div className=" rounded-lg  px-10 py-5">
+            <div className=" rounded-lg  px-10 py-5 z-20">
               <h3 className="text-orange-500 font-semibold mb-2 ">Languages</h3>
               <p className="font-semibold ">English - Intermediate fluency</p>
               <p className="font-semibold ">Portuguese - Native</p>
             </div>
 
-            <div className="rounded-lg px-10 py-5">
+            <div className="rounded-lg px-10 py-5 z-20">
               <h3 className="text-orange-500 font-semibold mb-2">Academic Education:</h3>
               <h4 className="font-semibold ">Analysis and Systems Development</h4>
               <span  className="font-semibold ">Anhanguera University:</span><br />
@@ -70,7 +71,7 @@ const About = () => {
             </div>
 
            
-              <div className=" rounded-lg px-10 py-5">
+              <div className=" rounded-lg px-10 py-5 z-20">
                 <h3 className="text-orange-500 font-semibold mb-2">Extra-curricular Education:</h3>
                 <ul className="font-semibold ">
                 <Popover>  

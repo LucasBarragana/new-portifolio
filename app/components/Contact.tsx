@@ -33,6 +33,7 @@ export default function Contact() {
 
     return (
         <section id="contact" className="mt-10 max-w-5xl mx-auto p-4">
+           <Image src={"/fundo.jpeg"} alt='fundoSkills' className='absolute sm-hidden z-5 opacity-5 left-20' width={1000} height={100}/>  
             <h1 className="text-4xl mb-5 font-semibold">Contact</h1>
             <blockquote className="italic mb-5">
             &quot;People around you influence you personally. Just as the places you work influence you professionally.
@@ -45,8 +46,8 @@ export default function Contact() {
                             <div>
                                 <h2 className="text-xl mb-3 font-semibold">Send me a message and let s work together</h2>
                             </div>
-                            <div className="flex mb-3">
-                                <div className="flex flex-col mr-5" style={{ width: '40%' }}>
+                            <div className="flex mb-3 w-full">
+                                <div className="flex flex-col mr-5">
                                     <label htmlFor="from_name" className="block mb-1">
                                         Name:
                                     </label>
@@ -55,13 +56,24 @@ export default function Contact() {
                                         id="from_name"
                                         name="from_name"
                                         required
-                                        className="border border-blue-900 bg-white rounded px-3 py-2 white mb-2"
-                                        style={{ width: '100%' }}
+                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 white mb-2 w-full md:w-40"
+                                    />
+                                </div>
+                                <div className="flex flex-col mr-5">
+                                    <label htmlFor="from_name" className="block mb-1">
+                                        Company:
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="from_name"
+                                        name="from_name"
+                                        required
+                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 white mb-2 md:w-40"
                                     />
                                 </div>
 
-                                <div className="flex flex-col" style={{ width: '60%' }}>
-                                    <label htmlFor="user_email" className="block  mb-1">
+                                <div className="flex flex-col">
+                                    <label htmlFor="user_email" className="block mb-1">
                                         Email:
                                     </label>
                                     <input
@@ -69,13 +81,11 @@ export default function Contact() {
                                         id="user_email"
                                         name="user_email"
                                         required
-                                        className="border border-blue-900 bg-white rounded px-3 py-2 mb-2"
-                                        style={{ width: '100%' }}
+                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 mb-2 w-50"
                                     />
                                 </div>
                             </div>
-
-                            <div className="flex flex-col mb-3" style={{ width: '100%' }}>
+                            <div className="flex flex-col mb-3 w-full" >
                                 <label htmlFor="message" className="block mb-1">
                                     Message:
                                 </label>
@@ -84,8 +94,7 @@ export default function Contact() {
                                     name="message"
                                     rows={4}
                                     required
-                                    className="border border-blue-900 bg-white rounded px-3 py-2 mb-2"
-                                    style={{ width: '100%' }}
+                                    className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 mb-2 w-full"                                    
                                 ></textarea>
                             </div>
 

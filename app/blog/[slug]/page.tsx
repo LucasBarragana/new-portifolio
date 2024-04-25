@@ -1,4 +1,5 @@
 
+import BackHome from "@/app/components/BackHome";
 import Left from "@/app/components/icons/Left";
 import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
@@ -30,19 +31,7 @@ export default async function BlogArticle({
 
   return (
     <div className="mt-8">
-       <div className="flex justify-between items-center mb-4">
-        <Link href="/" className="flex font-semibold hover:underline seta-link">
-          <Left />
-          Back
-        </Link>    
-        <div className="text-center">
-          <span className="block text-base text-primary font-semibold tracking-wide uppercase">
-            Bears <span className="text-orange-500">Dev</span> - Post
-          </span>
-        </div>
-        <div></div> 
-    </div>
-
+      <BackHome />
       <h1>        
         <span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
           {data.title}

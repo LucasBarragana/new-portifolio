@@ -1,3 +1,4 @@
+import BackHome from "@/app/components/BackHome";
 import Left from "@/app/components/icons/Left";
 import { fullProject } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
@@ -6,7 +7,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const revalidate = 30; // revalidate at most 30 seconds
+export const revalidate = 30; 
 
 async function getData(slug: string) {
   const query = `    
@@ -47,19 +48,7 @@ export default async function ProjectArticle({
 
   return (
     <div className="mt-8">
-        <div className="flex justify-between items-center mb-4">
-        <Link href="/" className="flex font-semibold hover:underline seta-link">
-          <Left />
-          Back
-        </Link>    
-        <div className="text-center">
-          <span className="block text-base text-primary font-semibold tracking-wide uppercase">
-            Bears <span className="text-orange-500">Dev</span> - PROJECT
-          </span>
-        </div>
-        <div></div> 
-    </div>
-
+      <BackHome />
       <h1>        
         <span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
           {data.title}
@@ -138,7 +127,7 @@ export default async function ProjectArticle({
       
 
       <div className="mt-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
-        <h1>O que eu aprendi criando esse projeto?</h1>
+        <h1>What I learn building this project?</h1>
         <PortableText value={data.content} />
       </div>
     </div>

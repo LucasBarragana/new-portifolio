@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { simpleBlogCard, simpleProjectCard } from "./lib/interface"; // Adicione o tipo de dados do projeto
+import { simpleBlogCard, simpleProjectCard } from "./lib/interface"; 
 import { client, urlFor } from "./lib/sanity";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -67,7 +67,7 @@ export default async function Home() {
       <Skills />
 
 
-      <h1 className="text-4xl font-semibold  mb-5 mt-10 underline">Projects</h1>
+      <h1 className="text-4xl font-semibold  mb-10 mt-20 underline">Projects</h1>
 
       <div id="projects" className="grid grid-cols-1  md:grid-cols-2 mt-5 gap-5 ">     
         {projectData.map((post, idx) => (
@@ -81,41 +81,45 @@ export default async function Home() {
             />
 
             <CardContent className="mt-5">
-              <h3 className="text-lg line-clamp-2 font-bold">{post.title}</h3>
-              <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
-                {post.description}
-              </p>
               <div>
-                <Card>
-                  <CardContent>
-                  <h3 className="mt-2 text-xs">Technologies Used:</h3>
-                <div className="flex flex-wrap mb--2 ">                
-                {Object.entries(post).map(([key, value]) => {
-                        if (key.includes("tecsImage") && value) {
-                          return (
-                            <div key={key} className=" p-1">                        
-                              <Image
-                                src={urlFor(value).url()}
-                                alt="technology image"
-                                width={30}
-                                height={30}
-                                className="object-cover rounded-lg"
-                              />
-                            </div>
-                          );
-                        }
-                        return null;
-                      })}
-                  </div>
-                  <div className="flex justify-between mt-2">
-                    <Link href={post.githubUrl} target="_blank" className="underline text-xs italic hover:scale-110">
-                      Github
-                      <Image src={'/github.png'} width={30} height={30} alt="github logo"/>  
-                    </Link> 
-                    <Link href={post.website} target="_blank" className="underline text-xs itali hover:scale-110">
-                      Website                
-                    </Link>
-                  </div>
+                <h3 className="text-lg line-clamp-2 font-bold">{post.title}</h3>
+                <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
+                  {post.description}
+                </p>
+                <Card className="mt-2">
+                  <CardContent className="flex justify-between">
+                    <div className="mt-4">
+                      <h3 className="text-xs">Technologies Used:</h3>
+                      <div className="flex flex-wrap mb--2 ">                
+                      {Object.entries(post).map(([key, value]) => {
+                            if (key.includes("tecsImage") && value) {
+                              return (
+                                <div key={key} className=" p-1">                        
+                                  <Image
+                                    src={urlFor(value).url()}
+                                    alt="technology image"
+                                    width={30}
+                                    height={30}
+                                    className="object-cover rounded-lg"
+                                  />
+                                </div>
+                              );
+                            }
+                            return null;
+                          })}                      
+                      </div>             
+                    </div>
+                    <div className="mt-2">
+                      <Link href={post.githubUrl} target="_blank" className="underline text-xs italic hover:scale-110">
+                        Github
+                        <Image src={'/github.png'} width={25} height={25} alt="github logo" />  
+                      </Link>                       
+                    </div>     
+                    <div className="mt-2">
+                      <Link href={post.website} target="_blank" className="underline text-xs itali hover:scale-110">
+                        Website                
+                      </Link>
+                    </div>
                   </CardContent>              
                 </Card>
               </div>
@@ -126,11 +130,18 @@ export default async function Home() {
               </Button>
             </CardContent>
           </Card>
-        ))}
+        ))}        
+      </div>
+      <div className="flex align-center justify-center mt-10">
+        <Button className="hover:text-orange-500 transition ease-in-out duration-300">
+          <Link href={`/project`} className="flex align-center justify-center"> 
+          <svg  xmlns="http://www.w3.org/2000/svg"  className="h-6 w-6"  fill="none"  viewBox="0 0 24 24"  stroke="currentColor">  <path    strokeLinecap="round"    strokeLinejoin="round"    strokeWidth="2"    d="M12 6v6m0 0v6m0-6h6m-6 0H6"  /></svg>
+          <p >See More Projects</p>
+          </Link>
+        </Button>
       </div>
 
-
-      <h1 className="text-4xl font-semibold  mb-5 mt-10 underline">Blog</h1>
+      <h1 className="text-4xl font-semibold  mb-10 mt-10 underline">Blog</h1>
       <div id="blog" className="grid grid-cols-1  md:grid-cols-2 mt-5 gap-5 ">        
         {/* Renderização dos posts do blog */}
         {blogData.map((post, idx) => (          
@@ -155,7 +166,15 @@ export default async function Home() {
           </Card>          
         ))}
       </div>
-
+      
+      <div className="flex align-center justify-center mt-10">
+        <Button className="hover:text-orange-500 transition ease-in-out duration-300">
+          <Link href="/blog" className="flex align-center justify-center"> 
+          <svg  xmlns="http://www.w3.org/2000/svg"  className="h-6 w-6"  fill="none"  viewBox="0 0 24 24"  stroke="currentColor">  <path    strokeLinecap="round"    strokeLinejoin="round"    strokeWidth="2"    d="M12 6v6m0 0v6m0-6h6m-6 0H6"  /></svg>
+          <p >See More Posts</p>
+          </Link>
+        </Button>
+      </div>
       
 
       <Contact />
