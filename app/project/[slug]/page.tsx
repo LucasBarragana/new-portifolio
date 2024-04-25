@@ -90,7 +90,7 @@ export default async function ProjectArticle({
             <div className="flex justify-between">
               <div>
                 <h3 className="mt-2 ">Technologies Used:</h3>
-                <div className="flex flex-wrap mb--2 ">                
+                <div className="flex flex-wrap mb--2 mr-4">                
                 {Object.entries(data).map(([key, value], index) => {
                     if (key.includes("tecsImage") && value) {
                       return (
@@ -110,13 +110,13 @@ export default async function ProjectArticle({
                 </div>
               </div>
               <div className="mt-2">
-                <Link href={data.githubUrl} target="_blank" className="underline italic hover:scale-110">
+                <Link href={data.githubUrl} target="_blank" className="underline italic hover:scale-110 ">
                   Github
                   <Image src={'/github.png'}  width={40} height={40} alt="github logo"/>  
                 </Link>                 
               </div>
-              <div className="mt-2">
-                <Link href={data.website} target="_blank" className="underline italic hover:scale-110">
+              <div className="mt-10 ml-4 md-flex md-flex-col">
+                <Link href={data.website} target="_blank" className=" underline italic hover:scale-110">
                   Website                
                 </Link>
               </div>

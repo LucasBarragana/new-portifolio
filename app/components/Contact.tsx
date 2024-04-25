@@ -47,7 +47,7 @@ export default function Contact() {
                                 <h2 className="text-xl mb-3 font-semibold">Send me a message and let s work together</h2>
                             </div>
                             <div className="flex mb-3 w-full">
-                                <div className="flex flex-col mr-5">
+                                <div className="flex flex-col mr-5 w-2/5">
                                     <label htmlFor="from_name" className="block mb-1">
                                         Name:
                                     </label>
@@ -56,23 +56,11 @@ export default function Contact() {
                                         id="from_name"
                                         name="from_name"
                                         required
-                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 white mb-2 w-full md:w-40"
-                                    />
-                                </div>
-                                <div className="flex flex-col mr-5">
-                                    <label htmlFor="from_name" className="block mb-1">
-                                        Company:
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="from_name"
-                                        name="from_name"
-                                        required
-                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 white mb-2 md:w-40"
+                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 white mb-2 "
                                     />
                                 </div>
 
-                                <div className="flex flex-col">
+                                <div className="flex flex-col w-3/5">
                                     <label htmlFor="user_email" className="block mb-1">
                                         Email:
                                     </label>
@@ -81,7 +69,7 @@ export default function Contact() {
                                         id="user_email"
                                         name="user_email"
                                         required
-                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 mb-2 w-50"
+                                        className="border border-blue-900 text-gray-900 bg-white rounded px-3 py-2 mb-2 "
                                     />
                                 </div>
                             </div>
