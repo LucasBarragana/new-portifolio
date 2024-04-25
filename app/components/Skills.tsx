@@ -8,15 +8,15 @@ export default async function Skills(){
         <section id="Skills" className="max-w-screen-lg mx-auto mt-10">
             <Image src={"/fundo-contact.jpg"} alt='fundoSkills' className='absolute z-5 opacity-10 left-20' width={1400} height={100}/>      
             <div>
-                <h1 className="text-4xl mb-5 font-semibold underline" >Tecnologias</h1>
+                <h1 className="text-4xl mb-5 font-semibold underline">Tecnologies</h1>
                 <blockquote className="italic mb-5">
-                &quot;Quando você aprende a entender e ler tecnologias/frameworks pela primeira vez, você pode trabalhar e ser um profissional em qualquer um deles.&quot;
+                &quot;When you first learn how to understand and read technologies/frameworks, you can work and be a professional in any of them.&quot;
                 </blockquote>
             </div>            
             <div>   
                 <Card>
                     <CardContent className="flex flex-wrap justify-center z-20">
-                        <h2 className="w-full text-center mb-4 mt-4">Aqui estão algumas tecnologias que tenho utilizado em meus projetos:</h2>
+                        <h2 className="w-full text-center mb-4 mt-4">Here are some technologies that I have been using in my projects:</h2>
                         <div className="flex flex-wrap justify-center z-20">
                             <CardWrapper image="/html.png" alt="HTML" text="HTML" />
                             <CardWrapper image="/css.png" alt="CSS" text="CSS" />
