@@ -66,10 +66,9 @@ export default async function Home() {
       <About />
       <Skills />
 
+      <h1 className="text-4xl font-semibold mb-10 mt-20 underline">Projects</h1>
 
-      <h1 className="text-4xl font-semibold  mb-10 mt-20 underline">Projects</h1>
-
-      <div id="projects" className="grid grid-cols-1  md:grid-cols-2 mt-5 gap-5 ">     
+      <div id="projects" className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
         {projectData.map((post, idx) => (
           <Card key={idx} className="hover:scale-110 ease-in-out duration-300">
             <Image
@@ -90,61 +89,61 @@ export default async function Home() {
                   <CardContent className="flex justify-between">
                     <div className="mt-4">
                       <h3 className="text-xs">Technologies Used:</h3>
-                      <div className="flex flex-wrap mb--2 ">                
-                      {Object.entries(post).map(([key, value]) => {
-                            if (key.includes("tecsImage") && value) {
-                              return (
-                                <div key={key} className=" p-1">                        
-                                  <Image
-                                    src={urlFor(value).url()}
-                                    alt="technology image"
-                                    width={30}
-                                    height={30}
-                                    className="object-cover rounded-lg"
-                                  />
-                                </div>
-                              );
-                            }
-                            return null;
-                          })}                      
-                      </div>             
+                      <div className="flex flex-wrap mb--2">
+                        {Object.entries(post).map(([key, value]) => {
+                          if (key.includes("tecsImage") && value) {
+                            return (
+                              <div key={key} className="p-1">
+                                <Image
+                                  src={urlFor(value).url()}
+                                  alt="technology image"
+                                  width={30}
+                                  height={30}
+                                  className="object-cover rounded-lg"
+                                />
+                              </div>
+                            );
+                          }
+                          return null;
+                        })}
+                      </div>
                     </div>
                     <div className="mt-2">
-                      <Link href={post.githubUrl} target="_blank" className="underline text-xs italic hover:scale-110">
+                      <Link href={post.githubUrl || "#"} target="_blank" className="underline text-xs italic hover:scale-110">
                         Github
-                        <Image src={'/github.png'} width={25} height={25} alt="github logo" />  
-                      </Link>                       
-                    </div>     
-                    <div className="mt-2">
-                      <Link href={post.website} target="_blank" className="underline text-xs itali hover:scale-110">
-                        Website                
+                        <Image src={'/github.png'} width={25} height={25} alt="github logo" />
                       </Link>
                     </div>
-                  </CardContent>              
+                    <div className="mt-2">
+                      <Link href={post.website || "#"} target="_blank" className="underline text-xs itali hover:scale-110">
+                        Website
+                      </Link>
+                    </div>
+                  </CardContent>
                 </Card>
               </div>
-             
-              
+
               <Button asChild className="w-full mt-7">
                 <Link href={`/project/${post.currentSlug}`} className="hover:text-orange-500 transition ease-in-out duration-300">Read More</Link>
               </Button>
             </CardContent>
           </Card>
-        ))}        
+        ))}
       </div>
       <div className="flex align-center justify-center mt-10">
         <Button className="hover:text-orange-500 transition ease-in-out duration-300">
-          <Link href={`/project`} className="flex align-center justify-center"> 
-          <svg  xmlns="http://www.w3.org/2000/svg"  className="h-6 w-6"  fill="none"  viewBox="0 0 24 24"  stroke="currentColor">  <path    strokeLinecap="round"    strokeLinejoin="round"    strokeWidth="2"    d="M12 6v6m0 0v6m0-6h6m-6 0H6"  /></svg>
-          <p >See More Projects</p>
+          <Link href={`/project`} className="flex align-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            <p>See More Projects</p>
           </Link>
         </Button>
       </div>
 
-      <h1 className="text-4xl font-semibold  mb-10 mt-10 underline">Blog</h1>
-      <div id="blog" className="grid grid-cols-1  md:grid-cols-2 mt-5 gap-5 ">        
-        {/* Renderização dos posts do blog */}
-        {blogData.map((post, idx) => (          
+      <h1 className="text-4xl font-semibold mb-10 mt-10 underline">Blog</h1>
+      <div id="blog" className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
+        {blogData.map((post, idx) => (
           <Card key={idx} className="hover:scale-110 transition ease-in-out duration-300">
             <Image
               src={urlFor(post.titleImage).url()}
@@ -160,22 +159,23 @@ export default async function Home() {
                 {post.smallDescription}
               </p>
               <Button asChild className="w-full mt-7">
-                <Link href={`/blog/${post.currentSlug}` } className="hover:text-orange-500 transition ease-in-out duration-300">Read More</Link>
+                <Link href={`/blog/${post.currentSlug}`} className="hover:text-orange-500 transition ease-in-out duration-300">Read More</Link>
               </Button>
             </CardContent>
-          </Card>          
+          </Card>
         ))}
       </div>
-      
+
       <div className="flex align-center justify-center mt-10">
         <Button className="hover:text-orange-500 transition ease-in-out duration-300">
-          <Link href="/blog" className="flex align-center justify-center"> 
-          <svg  xmlns="http://www.w3.org/2000/svg"  className="h-6 w-6"  fill="none"  viewBox="0 0 24 24"  stroke="currentColor">  <path    strokeLinecap="round"    strokeLinejoin="round"    strokeWidth="2"    d="M12 6v6m0 0v6m0-6h6m-6 0H6"  /></svg>
-          <p >See More Posts</p>
+          <Link href="/blog" className="flex align-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            <p>See More Posts</p>
           </Link>
         </Button>
       </div>
-      
 
       <Contact />
     </div>
